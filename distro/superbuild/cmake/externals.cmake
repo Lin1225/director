@@ -429,17 +429,7 @@ if(USE_PCL AND NOT USE_SYSTEM_PCL)
     -DBoost_INCLUDE_DIR:PATH=${Boost_INCLUDE_DIR}
   )
 
-  ExternalProject_Add(
-    flann
-    GIT_REPOSITORY https://github.com/Lin1225/flann.git
-    CMAKE_CACHE_ARGS
-      ${default_cmake_args}
-      ${boost_args}
-      ${python_args}
-      -DBUILD_MATLAB_BINDINGS:BOOL=OFF
-      -DBUILD_PYTHON_BINDINGS:BOOL=OFF
-      -DBUILD_C_BINDINGS:BOOL=OFF
-  )
+  
 
   # flann used to install to lib64, but it seems that it doesn't do that anymore...
   if(FALSE AND NOT APPLE AND ${CMAKE_SYSTEM_PROCESSOR} STREQUAL x86_64)
