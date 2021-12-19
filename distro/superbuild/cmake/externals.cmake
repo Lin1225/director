@@ -314,7 +314,7 @@ if(USE_PCL AND NOT USE_SYSTEM_PCL)
 
   ExternalProject_Add(
     flann
-    GIT_REPOSITORY https://github.com/Lin1225/flann
+    GIT_REPOSITORY https://github.com/Lin1225/flann.git
     CMAKE_CACHE_ARGS
       ${default_cmake_args}
       ${boost_args}
