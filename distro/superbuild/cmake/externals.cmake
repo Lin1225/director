@@ -315,7 +315,13 @@ if(USE_PCL AND NOT USE_SYSTEM_PCL)
   ExternalProject_Add(
     flann
     GIT_REPOSITORY https://github.com/Lin1225/flann.git
-    
+    CMAKE_CACHE_ARGS
+      ${default_cmake_args}
+      ${boost_args}
+      ${python_args}
+      -DBUILD_MATLAB_BINDINGS:BOOL=OFF
+      -DBUILD_PYTHON_BINDINGS:BOOL=ON
+      -DBUILD_C_BINDINGS:BOOL=OFF
   )
 
   # flann used to install to lib64, but it seems that it doesn't do that anymore...
